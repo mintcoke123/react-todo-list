@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import TodoList from "./TodoList";
 import TodoInsert from "./TodoInsert";
+import { TodoItem } from "../../types/todo";
 
 const MainContainer = styled.div`
   display: flex;
@@ -9,11 +10,23 @@ const MainContainer = styled.div`
   width: 100%;
 `;
 
-const Main = () => {
+const Main = ({
+  todos,
+  setTodos,
+  addTodo,
+  removeTodo,
+  toggleTodo,
+}: {
+  todos: TodoItem[];
+  setTodos: (todos: TodoItem[]) => void;
+  addTodo: (todo: TodoItem) => void;
+  removeTodo: (id: number) => void;
+  toggleTodo: (id: number) => void;
+}) => {
   return (
     <MainContainer>
-      <TodoInsert />
-      <TodoList />
+      <TodoInsert addTodo={addTodo} />
+      <TodoList todos={todos} removeTodo={removeTodo} toggleTodo={toggleTodo} />
     </MainContainer>
   );
 };

@@ -1,6 +1,7 @@
 import Header from "../components/header/Header";
 import styled from "styled-components";
 import Main from "../components/main/Main";
+import { TodoItem } from "../types/todo";
 
 const TodoTemplateContainer = styled.div`
   display: flex;
@@ -13,11 +14,29 @@ const TodoTemplateContainer = styled.div`
   margin: 0 auto;
 `;
 
-const TodoTemplate = () => {
+const TodoTemplate = ({
+  todos,
+  setTodos,
+  addTodo,
+  removeTodo,
+  toggleTodo,
+}: {
+  todos: TodoItem[];
+  setTodos: (todos: TodoItem[]) => void;
+  addTodo: (todo: TodoItem) => void;
+  removeTodo: (id: string) => void;
+  toggleTodo: (id: string) => void;
+}) => {
   return (
     <TodoTemplateContainer>
       <Header />
-      <Main />
+      <Main
+        todos={todos}
+        setTodos={setTodos}
+        addTodo={addTodo}
+        removeTodo={removeTodo}
+        toggleTodo={toggleTodo}
+      />
     </TodoTemplateContainer>
   );
 };

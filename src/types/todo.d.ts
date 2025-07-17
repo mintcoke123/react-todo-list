@@ -1,12 +1,17 @@
 export interface TodoItem {
-  id: number;
+  id: string;
   text: string;
   checked: boolean;
 }
 
-export interface TodoStore {
-  todos: TodoItem[];
+export interface AddTodo {
   addTodo: (todo: TodoItem) => void;
-  removeTodo: (id: number) => void;
-  toggleTodo: (id: number) => void;
+}
+
+export interface RemoveTodo {
+  removeTodo: (id: string) => void;
+}
+
+export interface ToggleTodo {
+  toggleTodo: (id: string) => void;
 }

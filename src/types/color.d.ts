@@ -1,6 +1,5 @@
 interface Color {
   primary: string;
-  background: string;
   white: string;
   black: string;
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import TodoListItem from "./TodoListItem";
 import { FaTrash } from "react-icons/fa";
-import useStore from "../../store/store";
+import { RemoveTodo, ToggleTodo, TodoItem } from "../../types/todo";
 
 const TodoListContainer = styled.div`
   display: flex;
@@ -31,8 +31,11 @@ const TodoListTitleTrash = styled(FaTrash)`
   right: 1rem;
 `;
 
-const TodoList = () => {
-  const { todos } = useStore();
+interface TodoListProps extends RemoveTodo, ToggleTodo {
+  todos: TodoItem[];
+}
+
+const TodoList = ({ todos, removeTodo, toggleTodo }: TodoListProps) => {
   return (
     <TodoListContainer>
       <TodoListTitle>
@@ -40,7 +43,12 @@ const TodoList = () => {
         <TodoListTitleTrash />
       </TodoListTitle>
       {todos.map((todo) => (
-        <TodoListItem key={todo.id} todo={todo} />
+        <TodoListItem
+          key={todo.id}
+          todo={todo}
+          removeTodo={removeTodo}
+          toggleTodo={toggleTodo}
+        />
       ))}
     </TodoListContainer>
   );

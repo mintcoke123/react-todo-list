@@ -4,10 +4,8 @@ import {
   MdCheckBoxOutlineBlank,
   MdCheckBox,
   MdRemoveCircleOutline,
-  MdAdd,
 } from "react-icons/md";
-import { TodoItem } from "../../types/todo";
-import useStore from "../../store/store";
+import { RemoveTodo, TodoItem, ToggleTodo } from "../../types/todo";
 
 const TodoListItemContainer = styled.div`
   display: flex;
@@ -52,8 +50,11 @@ const TodoListItemRemoveButton = styled.div`
   font-size: 2rem;
 `;
 
-const TodoListItem = ({ todo }: { todo: TodoItem }) => {
-  const { toggleTodo, removeTodo } = useStore();
+interface TodoListItemProps extends RemoveTodo, ToggleTodo {
+  todo: TodoItem;
+}
+
+const TodoListItem = ({ todo, removeTodo, toggleTodo }: TodoListItemProps) => {
   return (
     <TodoListItemContainer>
       <TodoListItemCheckBox onClick={() => toggleTodo(todo.id)}>
