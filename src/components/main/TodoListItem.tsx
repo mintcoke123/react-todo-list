@@ -6,8 +6,10 @@ import {
   MdRemoveCircleOutline,
   MdAdd,
 } from "react-icons/md";
+import { TodoItem } from "../../types/todo";
+import useStore from "../../store/store";
 
-const TodoItemContainer = styled.div`
+const TodoListItemContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -16,7 +18,7 @@ const TodoItemContainer = styled.div`
   margin: 0.1rem 0rem;
 `;
 
-const TodoItemCheckBox = styled.div`
+const TodoListItemCheckBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -26,7 +28,7 @@ const TodoItemCheckBox = styled.div`
   font-size: 2rem;
 `;
 
-const TodoItemContent = styled.div`
+const TodoListItemContent = styled.div`
   display: block;
   align-items: center;
   line-height: 4rem;
@@ -40,7 +42,7 @@ const TodoItemContent = styled.div`
   text-overflow: ellipsis;
 `;
 
-const TodoItemRemoveButton = styled.div`
+const TodoListItemRemoveButton = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -50,18 +52,21 @@ const TodoItemRemoveButton = styled.div`
   font-size: 2rem;
 `;
 
-const TodoItem = () => {
+const TodoListItem = ({ todo }: { todo: TodoItem }) => {
+  const { toggleTodo, removeTodo } = useStore();
   return (
-    <TodoItemContainer>
-      <TodoItemCheckBox>
-        <MdCheckBoxOutlineBlank />
-      </TodoItemCheckBox>
-      <TodoItemContent>TodoItsdfjfjkhfsdhjksdfjkhsdfkjfsdjkem</TodoItemContent>
-      <TodoItemRemoveButton>
-        <MdRemoveCircleOutline />
-      </TodoItemRemoveButton>
-    </TodoItemContainer>
+    <TodoListItemContainer>
+      <TodoListItemCheckBox onClick={() => toggleTodo(todo.id)}>
+        {todo.checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
+      </TodoListItemCheckBox>
+      <TodoListItemContent>
+        {todo.checked ? <s>{todo.text}</s> : todo.text}
+      </TodoListItemContent>
+      <TodoListItemRemoveButton>
+        <MdRemoveCircleOutline onClick={() => removeTodo(todo.id)} />
+      </TodoListItemRemoveButton>
+    </TodoListItemContainer>
   );
 };
 
-export default TodoItem;
+export default TodoListItem;

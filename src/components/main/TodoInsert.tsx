@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import COLORS from "../constants/color";
 import { MdAdd } from "react-icons/md";
+import useStore from "../../store/store";
+import { useState } from "react";
 
 const TodoInsertContainer = styled.div`
   display: flex;
@@ -36,11 +38,26 @@ const TodoInsertButton = styled.button`
 `;
 
 const TodoInsert = () => {
+  const { addTodo } = useStore();
+  const [value, setValue] = useState("");
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (value.trim() === "") return;
+    addTodo({ id: Date.now(), text: value, checked: false });
+    setValue("");
+  };
+
   return (
     <TodoInsertContainer>
-      <TodoInsertForm>
-        <TodoInsertInput type="text" placeholder="할 일을 입력하세요" />
-        <TodoInsertButton>
+      <TodoInsertForm onSubmit={onSubmit}>
+        <TodoInsertInput
+          type="text"
+          placeholder="할 일을 입력하세요"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <TodoInsertButton type="submit">
           <MdAdd />
         </TodoInsertButton>
       </TodoInsertForm>

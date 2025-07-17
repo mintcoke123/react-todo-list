@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import TodoListItem from "./TodoListItem";
 import { FaTrash } from "react-icons/fa";
+import useStore from "../../store/store";
 
 const TodoListContainer = styled.div`
   display: flex;
@@ -31,15 +32,16 @@ const TodoListTitleTrash = styled(FaTrash)`
 `;
 
 const TodoList = () => {
+  const { todos } = useStore();
   return (
     <TodoListContainer>
       <TodoListTitle>
         할 일
         <TodoListTitleTrash />
       </TodoListTitle>
-      <TodoListItem />
-      <TodoListItem />
-      <TodoListItem />
+      {todos.map((todo) => (
+        <TodoListItem key={todo.id} todo={todo} />
+      ))}
     </TodoListContainer>
   );
 };
