@@ -1,8 +1,8 @@
-import TodoPage from "./pages/todoPage";
+import TodoTemplate from "./templates/TodoTemplate";
 import "./index.css";
 
 function App() {
-  return <TodoPage />;
+  return <TodoTemplate />;
 }
 
 export default App;

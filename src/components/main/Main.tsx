@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import CompleteTodoList from "./CompleteTodoList";
-import IncompleteTodoList from "./IncompleteTodoList";
-import TodoInput from "./TodoInput";
+import TodoList from "./TodoList";
+import TodoInsert from "./TodoInsert";
 
 const MainContainer = styled.div`
   display: flex;
@@ -13,9 +12,8 @@ const MainContainer = styled.div`
 const Main = () => {
   return (
     <MainContainer>
-      <TodoInput />
-      <IncompleteTodoList />
-      <CompleteTodoList />
+      <TodoInsert />
+      <TodoList />
     </MainContainer>
   );
 };

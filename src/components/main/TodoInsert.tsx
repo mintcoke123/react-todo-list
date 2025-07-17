@@ -2,21 +2,21 @@ import styled from "styled-components";
 import COLORS from "../constants/color";
 import { MdAdd } from "react-icons/md";
 
-const TodoInputContainer = styled.div`
+const TodoInsertContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 `;
 
-const TodoInputForm = styled.form`
+const TodoInsertForm = styled.form`
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
 `;
 
-const TodoInputInput = styled.input`
+const TodoInsertInput = styled.input`
   font-size: 2rem;
   font-weight: bold;
   color: ${COLORS.black};
@@ -27,7 +27,7 @@ const TodoInputInput = styled.input`
   margin: 1rem 0rem;
 `;
 
-const TodoInputButton = styled.button`
+const TodoInsertButton = styled.button`
   font-size: 2rem;
   font-weight: bold;
   color: ${COLORS.white};
@@ -35,17 +35,17 @@ const TodoInputButton = styled.button`
   padding: 1rem;
 `;
 
-const TodoInput = () => {
+const TodoInsert = () => {
   return (
-    <TodoInputContainer>
-      <TodoInputForm>
-        <TodoInputInput type="text" placeholder="할 일을 입력하세요" />
-        <TodoInputButton>
+    <TodoInsertContainer>
+      <TodoInsertForm>
+        <TodoInsertInput type="text" placeholder="할 일을 입력하세요" />
+        <TodoInsertButton>
           <MdAdd />
-        </TodoInputButton>
-      </TodoInputForm>
-    </TodoInputContainer>
+        </TodoInsertButton>
+      </TodoInsertForm>
+    </TodoInsertContainer>
   );
 };
 
-export default TodoInput;
+export default TodoInsert;

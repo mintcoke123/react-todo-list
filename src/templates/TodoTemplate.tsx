@@ -2,7 +2,7 @@ import Header from "../components/header/Header";
 import styled from "styled-components";
 import Main from "../components/main/Main";
 
-const TodoPageContainer = styled.div`
+const TodoTemplateContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,13 +13,13 @@ const TodoPageContainer = styled.div`
   margin: 0 auto;
 `;
 
-const TodoPage = () => {
+const TodoTemplate = () => {
   return (
-    <TodoPageContainer>
+    <TodoTemplateContainer>
       <Header />
       <Main />
-    </TodoPageContainer>
+    </TodoTemplateContainer>
   );
 };
 
-export default TodoPage;
+export default TodoTemplate;
