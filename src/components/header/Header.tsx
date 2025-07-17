@@ -1,20 +1,19 @@
-import React from "react";
 import styled from "styled-components";
 
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 1rem;
   background-color: #f0f0f0;
 `;
 
 const HeaderLogo = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 16rem;
+  height: 16rem;
 `;
 
 const HeaderTitle = styled.h1`
-  font-size: 24px;
+  font-size: 2rem;
   font-weight: bold;
 `;
 
