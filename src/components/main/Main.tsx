@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import TodoList from "./TodoList";
 import TodoInsert from "./TodoInsert";
-import { TodoItem } from "../../types/todo";
+import { AddTodo, RemoveTodo, TodoItem, ToggleTodo } from "../../types/todo";
 
 const MainContainer = styled.div`
   display: flex;
@@ -10,19 +10,11 @@ const MainContainer = styled.div`
   width: 100%;
 `;
 
-const Main = ({
-  todos,
-  setTodos,
-  addTodo,
-  removeTodo,
-  toggleTodo,
-}: {
+interface MainProps extends AddTodo, RemoveTodo, ToggleTodo {
   todos: TodoItem[];
-  setTodos: (todos: TodoItem[]) => void;
-  addTodo: (todo: TodoItem) => void;
-  removeTodo: (id: number) => void;
-  toggleTodo: (id: number) => void;
-}) => {
+}
+
+const Main = ({ todos, addTodo, removeTodo, toggleTodo }: MainProps) => {
   return (
     <MainContainer>
       <TodoInsert addTodo={addTodo} />

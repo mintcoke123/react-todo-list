@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import greedySquareImage from "../../assets/greedySquareImage.jpg";
+import COLORS from "../constants/color";
+import TEXTS from "../constants/texts";
 
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: center;
-  background-color: #017356;
+  background-color: ${COLORS.primary};
   width: 100%;
   align-items: center;
   height: 10rem;
@@ -19,14 +21,14 @@ const HeaderLogo = styled.img`
 const HeaderTitle = styled.h1`
   font-size: 3rem;
   font-weight: bold;
-  color: #fff;
+  color: ${COLORS.white};
 `;
 
 const Header = () => {
   return (
     <HeaderContainer>
       <HeaderLogo src={greedySquareImage} />
-      <HeaderTitle>Greedy Todo List</HeaderTitle>
+      <HeaderTitle>{TEXTS.todoTemplateTitle}</HeaderTitle>
     </HeaderContainer>
   );
 };

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import TodoListItem from "./TodoListItem";
-import { FaTrash } from "react-icons/fa";
 import { RemoveTodo, ToggleTodo, TodoItem } from "../../types/todo";
+import MESSAGES from "../constants/messages";
+import COLORS from "../constants/color";
 
 const TodoListContainer = styled.div`
   display: flex;
@@ -15,20 +16,13 @@ const TodoListTitle = styled.h2`
   width: 100%;
   font-size: 2rem;
   font-weight: bold;
-  color: #fff;
-  background-color: #000;
+  color: ${COLORS.white};
+  background-color: ${COLORS.black};
   width: 100%;
   height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-const TodoListTitleTrash = styled(FaTrash)`
-  font-size: 1.5rem;
-  color: #fff;
-  position: absolute;
-  right: 1rem;
 `;
 
 interface TodoListProps extends RemoveTodo, ToggleTodo {
@@ -38,10 +32,7 @@ interface TodoListProps extends RemoveTodo, ToggleTodo {
 const TodoList = ({ todos, removeTodo, toggleTodo }: TodoListProps) => {
   return (
     <TodoListContainer>
-      <TodoListTitle>
-        할 일
-        <TodoListTitleTrash />
-      </TodoListTitle>
+      <TodoListTitle>{MESSAGES.todoListTitle}</TodoListTitle>
       {todos.map((todo) => (
         <TodoListItem
           key={todo.id}

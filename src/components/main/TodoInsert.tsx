@@ -4,6 +4,7 @@ import { MdAdd } from "react-icons/md";
 import { useState } from "react";
 import { AddTodo } from "../../types/todo";
 import { v4 as uuidv4 } from "uuid";
+import MESSAGES from "../constants/messages";
 
 const TodoInsertContainer = styled.div`
   display: flex;
@@ -57,7 +58,7 @@ const TodoInsert = ({ addTodo }: AddTodo) => {
       <TodoInsertForm onSubmit={onSubmit}>
         <TodoInsertInput
           type="text"
-          placeholder="할 일을 입력하세요"
+          placeholder={MESSAGES.todoInsertPlaceholder}
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
