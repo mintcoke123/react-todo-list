@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import greedySquareImage from "../../assets/greedySquareImage.jpg";
 import COLORS from "../constants/color";
-import TEXTS from "../constants/texts";
+import Texts from "../constants/texts";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderLogo src={greedySquareImage} />
-      <HeaderTitle>{TEXTS.todoTemplateTitle}</HeaderTitle>
+      <HeaderTitle>{Texts.todoTemplateTitle}</HeaderTitle>
     </HeaderContainer>
   );
 };

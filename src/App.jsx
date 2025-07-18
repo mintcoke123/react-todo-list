@@ -1,9 +1,14 @@
 import TodoTemplate from "./templates/TodoTemplate";
 import "./index.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { loadTodos, saveTodos } from "./utils/utils";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(loadTodos);
+
+  useEffect(() => {
+    saveTodos(todos);
+  }, [todos]);
 
   const addTodo = (todo) => {
     setTodos([...todos, todo]);

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import TodoListItem from "./TodoListItem";
 import { RemoveTodo, ToggleTodo, TodoItem } from "../../types/todo";
-import MESSAGES from "../constants/messages";
+import Texts from "../constants/texts";
 import COLORS from "../constants/color";
 
 const TodoListContainer = styled.div`
@@ -32,7 +32,7 @@ interface TodoListProps extends RemoveTodo, ToggleTodo {
 const TodoList = ({ todos, removeTodo, toggleTodo }: TodoListProps) => {
   return (
     <TodoListContainer>
-      <TodoListTitle>{MESSAGES.todoListTitle}</TodoListTitle>
+      <TodoListTitle>{Texts.todoListTitle}</TodoListTitle>
       {todos.map((todo) => (
         <TodoListItem
           key={todo.id}
