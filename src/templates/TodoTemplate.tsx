@@ -2,6 +2,7 @@ import Header from "../components/header/Header";
 import styled from "styled-components";
 import Main from "../components/main/Main";
 import { AddTodo, RemoveTodo, TodoItem, ToggleTodo } from "../types/todo";
+import NUMBERS from "../components/constants/numbers";
 
 const TodoTemplateContainer = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ const TodoTemplateContainer = styled.div`
   width: 100%;
   justify-content: center;
   width: auto;
-  max-width: 768px;
+  max-width: ${NUMBERS.mediaQueryBreakpoint}px;
   margin: 0 auto;
 `;
 

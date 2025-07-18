@@ -2,8 +2,8 @@ import { TodoItem } from "../types/todo";
 
 export function loadTodos(): TodoItem[] {
   try {
-    const savedTodos = localStorage.getItem("todos");
-    const parsedTodos = JSON.parse(savedTodos ?? "[]");
+    const savedRawTodos = localStorage.getItem("todos");
+    const parsedTodos = JSON.parse(savedRawTodos ?? "[]");
     return Array.isArray(parsedTodos) ? parsedTodos : [];
   } catch {
     return [];
