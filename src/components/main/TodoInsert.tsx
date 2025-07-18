@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import COLORS from "../constants/color";
+import COLORS from "../../constants/color";
 import { MdAdd } from "react-icons/md";
 import { useState } from "react";
 import { AddTodo } from "../../types/todo";
 import { v4 as uuidv4 } from "uuid";
-import TEXTS from "../constants/texts";
+import TEXTS from "../../constants/texts";
 
 const TodoInsertContainer = styled.div`
   display: flex;

@@ -1,4 +1,4 @@
-import Color from "../../types/color";
+import Color from "../types/color";
 
 const COLORS: Color = {
   primary: "#017356",

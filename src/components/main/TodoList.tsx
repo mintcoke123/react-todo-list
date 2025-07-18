@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import TodoListItem from "./TodoListItem";
 import { RemoveTodo, ToggleTodo, TodoItem } from "../../types/todo";
-import TEXTS from "../constants/texts";
-import COLORS from "../constants/color";
+import TEXTS from "../../constants/texts";
+import COLORS from "../../constants/color";
 
 const TodoListContainer = styled.div`
   display: flex;

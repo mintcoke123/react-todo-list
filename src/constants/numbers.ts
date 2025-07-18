@@ -1,4 +1,4 @@
-import Numbers from "../../types/numbers";
+import Numbers from "../types/numbers";
 
 const NUMBERS: Numbers = {
   mediaQueryBreakpoint: 768,
