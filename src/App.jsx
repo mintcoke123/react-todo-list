@@ -11,16 +11,16 @@ function App() {
   }, [todos]);
 
   const addTodo = (todo) => {
-    setTodos([...todos, todo]);
+    setTodos((prevTodos) => [...prevTodos, todo]);
   };
 
   const removeTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
   const toggleTodo = (id) => {
-    setTodos(
-      todos.map((todo) =>
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
         todo.id === id ? { ...todo, checked: !todo.checked } : todo
       )
     );
