@@ -27,7 +27,7 @@ const HeaderTitle = styled.h1`
 const Header = () => {
   return (
     <HeaderContainer>
-      <HeaderLogo src={greedySquareImage} />
+      <HeaderLogo src={greedySquareImage} alt="greedySquareImage" />
       <HeaderTitle>{TEXTS.todoTemplateTitle}</HeaderTitle>
     </HeaderContainer>
   );
