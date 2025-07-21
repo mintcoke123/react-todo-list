@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderLogo src={greedySquareImage} alt="greedySquareImage" />
-      <HeaderTitle>{TEXTS.todoTemplateTitle}</HeaderTitle>
+      <HeaderTitle>{TEXTS.todo.templateTitle}</HeaderTitle>
     </HeaderContainer>
   );
 };

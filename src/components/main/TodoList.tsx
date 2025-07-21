@@ -32,7 +32,7 @@ interface TodoListProps extends RemoveTodo, ToggleTodo {
 const TodoList = ({ todos, removeTodo, toggleTodo }: TodoListProps) => {
   return (
     <TodoListContainer>
-      <TodoListTitle>{TEXTS.todoListTitle}</TodoListTitle>
+      <TodoListTitle>{TEXTS.todo.listTitle}</TodoListTitle>
       {todos.map((todo) => (
         <TodoListItem
           key={todo.id}

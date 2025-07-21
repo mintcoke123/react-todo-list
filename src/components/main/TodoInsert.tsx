@@ -58,7 +58,7 @@ const TodoInsert = ({ addTodo }: AddTodo) => {
       <TodoInsertForm onSubmit={onSubmit}>
         <TodoInsertInput
           type="text"
-          placeholder={TEXTS.todoInsertPlaceholder}
+          placeholder={TEXTS.todo.insertPlaceholder}
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
