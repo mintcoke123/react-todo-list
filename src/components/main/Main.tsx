@@ -3,7 +3,7 @@ import TodoList from "./TodoList";
 import TodoInsert from "./TodoInsert";
 import { AddTodo, RemoveTodo, TodoItem, ToggleTodo } from "../../types/todo";
 
-const MainContainer = styled.div`
+const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;

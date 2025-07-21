@@ -3,7 +3,7 @@ import greedySquareImage from "../../assets/greedySquareImage.jpg";
 import COLORS from "../../constants/color";
 import TEXTS from "../../constants/texts";
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
   background-color: ${COLORS.primary};

@@ -4,7 +4,7 @@ import { RemoveTodo, ToggleTodo, TodoItem } from "../../types/todo";
 import TEXTS from "../../constants/texts";
 import COLORS from "../../constants/color";
 
-const TodoListContainer = styled.div`
+const TodoListContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;

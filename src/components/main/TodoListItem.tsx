@@ -7,7 +7,7 @@ import {
 } from "react-icons/md";
 import { RemoveTodo, TodoItem, ToggleTodo } from "../../types/todo";
 
-const TodoListItemContainer = styled.div<{ $checked: boolean }>`
+const TodoListItemContainer = styled.li<{ $checked: boolean }>`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -27,7 +27,7 @@ const TodoListItemCheckBox = styled.div`
   font-size: 2rem;
 `;
 
-const TodoListItemContent = styled.div`
+const TodoListItemContent = styled.span`
   display: block;
   align-items: center;
   line-height: 4rem;
@@ -58,14 +58,20 @@ interface TodoListItemProps extends RemoveTodo, ToggleTodo {
 const TodoListItem = ({ todo, removeTodo, toggleTodo }: TodoListItemProps) => {
   return (
     <TodoListItemContainer $checked={todo.checked}>
-      <TodoListItemCheckBox onClick={() => toggleTodo(todo.id)}>
+      <TodoListItemCheckBox
+        onClick={() => toggleTodo(todo.id)}
+        aria-label="할 일 체크박스"
+      >
         {todo.checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
       </TodoListItemCheckBox>
       <TodoListItemContent>
-        {todo.checked ? <s>{todo.text}</s> : <span>{todo.text}</span>}
+        {todo.checked ? <s>{todo.text}</s> : todo.text}
       </TodoListItemContent>
       <TodoListItemRemoveButton>
-        <MdRemoveCircleOutline onClick={() => removeTodo(todo.id)} />
+        <MdRemoveCircleOutline
+          onClick={() => removeTodo(todo.id)}
+          aria-label="할 일 삭제"
+        />
       </TodoListItemRemoveButton>
     </TodoListItemContainer>
   );

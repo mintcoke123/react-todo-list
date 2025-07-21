@@ -6,7 +6,7 @@ import { AddTodo } from "../../types/todo";
 import { v4 as uuidv4 } from "uuid";
 import TEXTS from "../../constants/texts";
 
-const TodoInsertContainer = styled.div`
+const TodoInsertContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
