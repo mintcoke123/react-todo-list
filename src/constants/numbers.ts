@@ -1,7 +1,5 @@
-import Numbers from "../types/numbers";
-
-const NUMBERS: Numbers = {
+const NUMBERS = {
   mediaQueryBreakpoint: 768,
-};
+} as const;
 
 export default NUMBERS;
