@@ -7,12 +7,13 @@ import {
 } from "react-icons/md";
 import { RemoveTodo, TodoItem, ToggleTodo } from "../../types/todo";
 
-const TodoListItemContainer = styled.div<{ checked: boolean }>`
+const TodoListItemContainer = styled.div<{ $checked: boolean }>`
   display: flex;
   flex-direction: row;
   width: 100%;
   border: 1px solid ${COLORS.black};
-  background-color: ${({ checked }) => (checked ? COLORS.gray : COLORS.white)};
+  background-color: ${({ $checked }) =>
+    $checked ? COLORS.gray : COLORS.white};
   margin: 0.1rem 0rem;
 `;
 
@@ -56,7 +57,7 @@ interface TodoListItemProps extends RemoveTodo, ToggleTodo {
 
 const TodoListItem = ({ todo, removeTodo, toggleTodo }: TodoListItemProps) => {
   return (
-    <TodoListItemContainer checked={todo.checked}>
+    <TodoListItemContainer $checked={todo.checked}>
       <TodoListItemCheckBox onClick={() => toggleTodo(todo.id)}>
         {todo.checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
       </TodoListItemCheckBox>
