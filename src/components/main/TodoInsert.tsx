@@ -45,6 +45,10 @@ const TodoInsert = ({ addTodo }: AddTodo) => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (value.trim() === "") return;
+    if (value.length > 100) {
+      setValue(value.slice(0, 100));
+      return;
+    }
     addTodo({
       id: uuidv4(),
       text: value,
