@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import TodoTemplate from "./templates/TodoTemplate";
+import "./index.css";
+import { useState, useEffect } from "react";
+import { loadTodos, saveTodos } from "./utils/utils";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState(loadTodos);
 
+  useEffect(() => {
+    saveTodos(todos);
+  }, [todos]);
+
+  const addTodo = (todo) => {
+    setTodos((prevTodos) => [...prevTodos, todo]);
+  };
+
+  const removeTodo = (id) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  };
+
+  const toggleTodo = (id) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, checked: !todo.checked } : todo
+      )
+    );
+  };
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <TodoTemplate
+      todos={todos}
+      addTodo={addTodo}
+      removeTodo={removeTodo}
+      toggleTodo={toggleTodo}
+    />
+  );
 }
 
-export default App
+export default App;
