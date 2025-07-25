@@ -67,4 +67,4 @@ const TodoList = ({ todos, removeTodo, toggleTodo }: TodoListProps) => {
   );
 };
 
-export default memo(TodoList);
+export default TodoList;
