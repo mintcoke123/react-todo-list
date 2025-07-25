@@ -52,7 +52,7 @@ const TodoList = ({ todos, removeTodo, toggleTodo }: TodoListProps) => {
       <TodoListTitle>{TEXTS.todo.listTitle}</TodoListTitle>
       <div style={{ flex: 1, width: "100%" }}>
         <AutoSizer>
-          {({ width, height }) => (
+          {({ width }) => (
             <List
               width={width}
               height={window.innerHeight - 100}
