@@ -4,6 +4,7 @@ export interface TodoItem {
   checked: boolean;
 }
 
+
 export interface AddTodo {
   addTodo: (todo: TodoItem) => void;
 }
