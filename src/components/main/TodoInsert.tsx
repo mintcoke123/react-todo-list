@@ -65,6 +65,7 @@ const TodoInsert = ({ addTodo }: AddTodo) => {
           placeholder={TEXTS.todo.insertPlaceholder}
           value={value}
           onChange={(e) => setValue(e.target.value)}
+          maxLength={100}
         />
         <TodoInsertButton type="submit">
           <MdAdd />
