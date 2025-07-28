@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { loadTodos, saveTodos } from "./utils/utils";
 
 function App() {
-  const [todos, setTodos] = useState(createBulkTodos());
+  const [todos, setTodos] = useState(() => createBulkTodos());
 
   function createBulkTodos() {
     const array = [];
