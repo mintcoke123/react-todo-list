@@ -3,9 +3,8 @@ import TodoListItem from "./TodoListItem";
 import { RemoveTodo, ToggleTodo, TodoItem } from "../../types/todo";
 import TEXTS from "../../constants/texts";
 import COLORS from "../../constants/color";
-import { memo, useCallback } from "react";
+import { useCallback } from "react";
 import { List, ListRowProps, AutoSizer } from "react-virtualized";
-
 
 const TodoListContainer = styled.section`
   display: flex;

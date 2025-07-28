@@ -1,7 +1,7 @@
 import TodoTemplate from "./templates/TodoTemplate";
 import "./index.css";
 import { useState, useEffect } from "react";
-import { loadTodos, saveTodos } from "./utils/utils";
+import { saveTodos } from "./utils/utils";
 
 function App() {
   const [todos, setTodos] = useState(() => createBulkTodos());
